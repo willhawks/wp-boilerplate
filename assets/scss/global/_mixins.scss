@@ -1,0 +1,12 @@
+@mixin background-image($position: center, $size: cover, $repeat: no-repeat) {
+	background-position: $position;
+	background-size: $size;
+	background-repeat: $repeat;
+	@content;
+}
+
+@mixin responsive($breakpoint: $break) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
