@@ -14,7 +14,7 @@
 
       <div class="navbar-logo">
         <a class="navbar-logo__link" href="<?php bloginfo('url'); ?>">
-          <img class="navbar-logo__logo" src="<?php echo get_template_directory_uri(); ?>/assets/img/jay-hughes-logo.png" alt="Jay Hughes Logo"/>
+          <img class="navbar-logo__logo" src="" alt=""/>
         </a>
       </div>
 
