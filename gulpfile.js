@@ -7,6 +7,7 @@ const sass = require('gulp-sass');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 // const jshint = require('gulp-jshint');
+// I don't know how to use this. Halp.
 const rename = require('gulp-rename');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
@@ -20,7 +21,7 @@ gulp.task('styles', () => {
     { objectMode: true },
     gulp.src('./node_modules/normalize.css/normalize.css')
       .pipe(sourcemaps.init()),
-    // Add other external stylesheets to concatinate here with gulp.src().
+    // Add other external stylesheets to concatenate here with gulp.src().
     gulp.src('assets/scss/main.scss')
       .pipe(sass().on('error', sass.logError)),
   )
@@ -40,7 +41,7 @@ gulp.task('dev_styles', () => {
     { objectMode: true },
     gulp.src('./node_modules/normalize.css/normalize.css')
       .pipe(sourcemaps.init()),
-    // Add other external stylesheets to concatinate here with gulp.src().
+    // Add other external stylesheets to concatenate here with gulp.src().
     gulp.src('assets/scss/main.scss')
       .pipe(sass().on('error', sass.logError)),
   )
@@ -61,6 +62,8 @@ gulp.task('dev_scripts',() => {
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
       // Add transformation tasks to the pipeline here.
+        // Any tasks between sourcemaps.init and .write must be compatible with sourcemaps
+        // https://github.com/gulp-sourcemaps/gulp-sourcemaps/wiki/Plugins-with-gulp-sourcemaps-support
       // .pipe(uglify())
     .pipe(sourcemaps.write('./'))
     // Start piping stream to tasks!
