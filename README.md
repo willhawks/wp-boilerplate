@@ -1,4 +1,4 @@
-# wp-boilerplate
+# wp-boilerplate :monkey:
 
 **Wordpress theme boilerplate with npm and gulp**
 
