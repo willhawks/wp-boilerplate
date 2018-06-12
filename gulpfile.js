@@ -113,6 +113,6 @@ gulp.task('watch', () => {
   gulp.watch('assets/scss/**/*.scss', ['dev_styles']);
 
   // Watch .js files
-  gulp.watch('assets/js/**/*.js', ['dev_scripts']);
+  gulp.watch('assets/**/*.js', ['dev_scripts']);
 
 });
