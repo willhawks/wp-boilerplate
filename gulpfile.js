@@ -15,6 +15,8 @@ const babel = require('gulp-babel');
 const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss');
 const streamqueue = require('streamqueue');
+const livereload = require('gulp-livereload');
+
 
 gulp.task('styles', () => {
   return streamqueue(
@@ -47,7 +49,9 @@ gulp.task('dev_styles', () => {
   )
   .pipe(concat('main.css'))
   .pipe(sourcemaps.write('.'))
-  .pipe(gulp.dest('dist'));
+  .pipe(gulp.dest('dist'))
+  .pipe(livereload());
+
 });
 
 
@@ -67,7 +71,9 @@ gulp.task('dev_scripts',() => {
       // .pipe(uglify())
     .pipe(sourcemaps.write('./'))
     // Start piping stream to tasks!
-    .pipe(gulp.dest('./dist/'));
+    .pipe(gulp.dest('./dist/'))
+    .pipe(livereload());
+
 });
 
 gulp.task('scripts', () => {
@@ -99,6 +105,7 @@ gulp.task('default', () => {
 });
 
 gulp.task('watch', () => {
+  livereload.listen();
 
   // Watch .scss files
   gulp.watch('assets/scss/**/*.scss', ['dev_styles']);
