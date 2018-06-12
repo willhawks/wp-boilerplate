@@ -25,6 +25,7 @@ gulp.task('styles', () => {
       .pipe(sourcemaps.init()),
     // Add other external stylesheets to concatenate here with gulp.src().
     gulp.src('assets/scss/main.scss')
+      .pipe(sourcemaps.init())
       .pipe(sass().on('error', sass.logError)),
   )
   .pipe(concat('main.css'))
@@ -45,6 +46,7 @@ gulp.task('dev_styles', () => {
       .pipe(sourcemaps.init()),
     // Add other external stylesheets to concatenate here with gulp.src().
     gulp.src('assets/scss/main.scss')
+      .pipe(sourcemaps.init())
       .pipe(sass().on('error', sass.logError)),
   )
   .pipe(concat('main.css'))
