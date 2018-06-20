@@ -26,13 +26,13 @@ gulp.task('styles', () => {
     // Add other external stylesheets to concatenate here with gulp.src().
     gulp.src('assets/scss/main.scss')
       .pipe(sourcemaps.init())
-      .pipe(sass().on('error', sass.logError)),
+      .pipe(sass().on('error', sass.logError))
   )
   .pipe(concat('main.css'))
   .pipe(gulp.dest('dist'))
   .pipe(postcss([
     autoprefixer({browsers: ['last 2 versions']}),
-    cssnano(),
+    cssnano()
   ]))
   .pipe(rename({suffix: '.min'}))
   .pipe(sourcemaps.write('.'))
@@ -47,7 +47,7 @@ gulp.task('dev_styles', () => {
     // Add other external stylesheets to concatenate here with gulp.src().
     gulp.src('assets/scss/main.scss')
       .pipe(sourcemaps.init())
-      .pipe(sass().on('error', sass.logError)),
+      .pipe(sass().on('error', sass.logError))
   )
   .pipe(concat('main.css'))
   .pipe(sourcemaps.write('.'))
