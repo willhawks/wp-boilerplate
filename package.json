@@ -7,7 +7,9 @@
   "private": false,
   "license": "MIT",
   "scripts": {
-    "open": "open . -a 'visual studio code'"
+    "open": "open . -a 'open'",
+    "start": "gulp watch",
+    "build": "gulp"
   },
   "dependencies": {
     "normalize.css": "^8.0.0"

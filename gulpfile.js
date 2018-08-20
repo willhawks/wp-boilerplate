@@ -49,7 +49,7 @@ gulp.task('dev_styles', () => {
       .pipe(sourcemaps.init())
       .pipe(sass().on('error', sass.logError))
   )
-  .pipe(concat('main.css'))
+  .pipe(concat('main.min.css'))
   .pipe(sourcemaps.write('.'))
   .pipe(gulp.dest('dist'))
   .pipe(livereload());
@@ -64,7 +64,7 @@ gulp.task('dev_scripts',() => {
   })
     .bundle()
     //Pass desired output filename to vinyl-source-stream
-    .pipe(source('main.js'))
+    .pipe(source('main.min.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
       // Add transformation tasks to the pipeline here.
@@ -100,7 +100,10 @@ gulp.task('scripts', () => {
 
 });
 
-
+gulp.tak('refresh', () => {
+  gulp.src('index.php')
+    .pipe(reload());
+})
 
 gulp.task('default', () => {
     gulp.start('styles', 'scripts' );
@@ -115,4 +118,6 @@ gulp.task('watch', () => {
   // Watch .js files
   gulp.watch('assets/**/*.js', ['dev_scripts']);
 
+  // Watch .php files
+  gulp.watch('**/*.php', ['refresh']);
 });

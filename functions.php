@@ -6,12 +6,14 @@ add_action( 'wp_enqueue_scripts', 'cd_theme_styles' );
 add_action( 'wp_enqueue_scripts', 'cd_theme_scripts' );
 
 function cd_theme_styles() {
+  $ver = wp_get_theme()->get('Version');
   wp_enqueue_style( 'fonts', '', array(), null );
-  wp_enqueue_style( 'build_styles', get_template_directory_uri() . '/dist/main.css' );
+  wp_enqueue_style( 'build_styles', get_template_directory_uri() . '/dist/main.min.css', array(), $ver );
 }
 
 function cd_theme_scripts() {
-  wp_enqueue_script( 'build_js', get_template_directory_uri() . '/dist/main.js', array(), false, true );
+  $ver = wp_get_theme()->get('Version');
+  wp_enqueue_script( 'build_js', get_template_directory_uri() . '/dist/main.min.js', array(), $ver, true );
 }
 
 /* Add Theme Supports */
