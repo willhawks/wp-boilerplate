@@ -100,10 +100,10 @@ gulp.task('scripts', () => {
 
 });
 
-gulp.tak('refresh', () => {
+gulp.task('refresh', () => {
   gulp.src('index.php')
     .pipe(reload());
-})
+});
 
 gulp.task('default', () => {
     gulp.start('styles', 'scripts' );
