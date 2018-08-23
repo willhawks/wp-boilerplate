@@ -102,7 +102,7 @@ gulp.task('scripts', () => {
 
 gulp.task('refresh', () => {
   gulp.src('index.php')
-    .pipe(reload());
+    .pipe(livereload());
 });
 
 gulp.task('default', () => {
