@@ -1,0 +1,44 @@
+.navbar-logo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 170px;
+  z-index: 5;
+  &__link {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 35px;
+  }
+  &__logo {
+    width: 140px;
+  }
+  svg {
+    position: absolute;
+    transform: translateY(-56%);
+    left: -220px;
+  }
+  
+  @media (max-width: 320px) {
+    left: -28px;
+  }
+
+  transition: .3s;
+
+  .open & {
+    transform: scale(1.6) translateX(38px);
+  }
+
+  @include responsive {
+    position: static;
+    width: 280px;
+    height: 100%;
+    &__link {
+      left: 92px;
+    }
+    svg {
+      transform: translateY(-58%) rotate(28deg);
+      left: -100px;
+    }
+  }
+}

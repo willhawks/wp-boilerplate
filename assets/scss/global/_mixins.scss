@@ -10,3 +10,15 @@
     @content;
   }
 }
+
+@mixin font($weight: 500, $style: normal) {
+	font-family: komet, sans-serif;
+	font-weight: $weight;
+	font-style: $style;
+}
+
+@mixin font-sc($weight: 500, $style: normal) {
+	font-family: komet-sc, sans-serif;
+	font-weight: $weight;
+	font-style: $style;
+}

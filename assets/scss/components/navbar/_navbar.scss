@@ -1,0 +1,28 @@
+.navbar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  height: 65px;
+
+  background-color: $purple;
+
+  transition: .25s;
+
+  &.open {
+    background-color: white;
+  }
+
+
+  @include responsive {
+    height: 85px;
+  }
+}
+
+@import 'navbar-logo';
+
+@import 'navbar-tag';
+
+@import 'navbar-nav';
+
+@import 'toggler';

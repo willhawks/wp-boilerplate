@@ -1,0 +1,125 @@
+.navbar-nav {
+  position: absolute;
+  height: calc(100vh - 65px);
+  .admin-bar & {
+    height: calc(100vh - 46px - 65px);
+  }
+  width: 100%;
+  top: 65px;
+  left: 0;
+  z-index: 0;
+  padding-top: 25%;
+  
+  background-color: rgba($purple, .9);
+  display: flex;
+  flex-direction: column;
+
+  transform: translateY(-150%);
+  transition: .25s;
+
+  .open & {
+    transform: translateY(0);
+  }
+ 
+  .navbar-tag {
+    padding: 6rem 0 3rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  &__menu {
+    padding: 3rem 2rem;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    .menu-item {
+      text-align: center;
+      a {
+        @include font-sc($bold);
+        color: white; 
+        font-size: 2.8rem;
+        letter-spacing: 1.87px;
+        text-decoration: none;
+      }
+    }
+  }
+  &__social {
+    list-style: none;
+    padding: 2rem 3rem 5rem;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    height: 32px;
+    .social-media {
+      // width: 100%;
+      // flex: 1 1 auto;
+      margin: 0 1rem;
+      display: block;
+      height: 32px;
+      a {
+        display: block;
+        width: 32px;
+        padding: .5rem;
+        i, svg {
+          color: white;  
+          fill: white;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  @include responsive {
+    transform: none;
+    background-color: $dark-blue;
+    padding: 0;
+    > .navbar-tag {
+      display: none;
+    }
+    flex-direction: row;
+    $height: 30px;
+    height: $height;
+    .admin-bar & {
+      height: $height;
+    }
+    bottom: 0;
+    top: initial;
+
+    &__menu {
+      flex-direction: row;
+      padding: 0;
+      padding-left: 280px;
+      .menu-item {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        a {
+          font-size: 1.4rem;
+        }
+      }
+    }
+
+    &__social {
+      padding: 0;
+      .social-media {
+        a {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          svg {
+            height: 15px;
+            width: 15px;
+            margin-bottom: .25rem;
+          }
+        }
+      }
+    }
+    
+  }
+}

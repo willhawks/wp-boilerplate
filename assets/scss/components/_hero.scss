@@ -1,0 +1,42 @@
+.hero {
+  height: 200px;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  @include responsive {
+    height: 470px;
+  }
+  
+  &__image {
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__text {
+    text-align: center;
+    width: 75%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+
+  svg {
+    width: 600px;
+    height: 600 * 212 / 1320 * 1px;
+    bottom: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    @include responsive {
+      width: 1320px;
+      height: 212px;
+    }
+  }
+}
