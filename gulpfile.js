@@ -1,22 +1,25 @@
-const browserify = require('browserify');
 const gulp = require('gulp');
-const source = require('vinyl-source-stream');
-const buffer = require('vinyl-buffer');
-
-const sass = require('gulp-sass');
-const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
-// const jshint = require('gulp-jshint');
-// I don't know how to use this. Halp.
 const rename = require('gulp-rename');
 const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
-const babel = require('gulp-babel');
-const sourcemaps = require('gulp-sourcemaps');
-const postcss = require('gulp-postcss');
-const streamqueue = require('streamqueue');
 const livereload = require('gulp-livereload');
+const sourcemaps = require('gulp-sourcemaps');
 
+// css
+const sass = require('gulp-sass');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
+const streamqueue = require('streamqueue');
+
+// js
+const browserify = require('browserify');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
+
+// images
+const imagemin = require('gulp-imagemin');
 
 gulp.task('styles', () => {
   return streamqueue(
@@ -57,7 +60,7 @@ gulp.task('dev_styles', () => {
 });
 
 
-gulp.task('dev_scripts',() => {
+gulp.task('dev_scripts', () => {
   return browserify({
     entries: ['./assets/index.js'],
     debug: true
@@ -100,6 +103,13 @@ gulp.task('scripts', () => {
 
 });
 
+gulp.task('images', () => {
+  gulp.src('assets/images/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('./dist'))
+    .pipe(livereload());
+});
+
 gulp.task('refresh', () => {
   gulp.src('index.php')
     .pipe(livereload());
@@ -120,4 +130,8 @@ gulp.task('watch', () => {
 
   // Watch .php files
   gulp.watch('**/*.php', ['refresh']);
+
+  // Watch images
+  gulp.watch('assets/images/**/*', ['images']);
+  
 });
