@@ -21,7 +21,7 @@
     "browserify": "^16.2.0",
     "cssnano": "^3.10.0",
     "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.1",
+    "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^4.1.0",
     "gulp-livereload": "^3.8.1",
