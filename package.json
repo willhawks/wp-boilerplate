@@ -1,12 +1,11 @@
 {
-  "name": "repeat-street",
+  "name": "wp-boilerplate",
   "version": "1.0.0",
   "description": "",
   "author": "Creative Distillery",
-  "repository": "https://github.com/willfalcon/repeat-street.git",
-  "private": true,
+  "repository": "https://github.com/willfalcon/wp-boilerplate.git",
+  "license": "MIT",
   "scripts": {
-    "open": "open . -a 'open'",
     "start": "gulp watch",
     "build": "gulp"
   },
