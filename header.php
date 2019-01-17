@@ -23,7 +23,7 @@
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </button>
       </div>
 
       <nav class="navbar-nav">
