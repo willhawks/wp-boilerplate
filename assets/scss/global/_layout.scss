@@ -1,12 +1,2 @@
 body {
-  display: flex;
-  flex-flow: column;
-  min-height: 100vh;
-  &.admin-bar {
-    min-height: calc(100vh - 32px);
-  }
-
-  .page-container {
-    flex: 1;
-  }
 }
