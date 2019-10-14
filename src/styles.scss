@@ -1,7 +1,0 @@
-@import 'styles/global/global';
-@import 'styles/components/components';
-@import 'styles/pages/pages';
-
-@supports (display: grid) {
-  @import 'styles/grid/grid';
-}

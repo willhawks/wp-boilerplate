@@ -11,8 +11,8 @@ function refresh(cb) {
 
 function watchFiles() {
   livereload.listen();
-  watch(['src/index.js', 'src/js/**/*.js'], series(devJS, refresh));
-  watch(['src/styles.scss', 'src/scss/**/*.scss'], devScss);
+  watch(['src/js/**/*.js'], series(devJS, refresh));
+  watch(['src/scss/**/*.scss'], devScss);
   watch(['src/images/**/*'], { events: 'add' }, images);
   watch(['**/*.php'], refresh);
 }

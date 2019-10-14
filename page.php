@@ -4,11 +4,7 @@
 
   <main <?php post_class(); ?>>
 
-    <header class="page-header">
-
-      <h1 class="page-title"><?php the_title(); ?></h1>
-
-    </header>
+    <h1 class="page-title"><?php the_title(); ?></h1>
 
     <div class="page-content">
 

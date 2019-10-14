@@ -23,7 +23,7 @@ function devScss() {
     { objectMode: true },
     src('./node_modules/normalize.css/normalize.css')
       .pipe(sourcemaps.init()),
-    src('src/styles.scss')
+    src('src/styles/styles.scss')
       .pipe(sourcemaps.init())
       .pipe(sass().on('error', sass.logError)),
   )
@@ -38,7 +38,7 @@ function prodScss() {
     { objectMode: true },
     src('./node_modules/normalize.css/normalize.css')
       .pipe(sourcemaps.init()),
-    src('src/styles.scss')
+    src('src/styles/styles.scss')
       .pipe(sourcemaps.init())
       .pipe(sass().on('error', sass.logError)),
   )

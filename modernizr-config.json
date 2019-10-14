@@ -1,5 +1,5 @@
 {
   "minify": true,
   "options": ["setClasses"],
-  "feature-detects": []
+  "feature-detects": ["test/img/webp"]
 }

@@ -8,7 +8,7 @@ const livereload = require('gulp-livereload');
 
 async function bundleJS(cb) {
   const bundle = await rollup({
-    input: './src/index.js',
+    input: './src/js/index.js',
     plugins: [
       commonjs(),
       resolve(),
@@ -30,7 +30,7 @@ async function bundleJS(cb) {
 
 async function bundleAndMinifyJS(cb) {
   const bundle = await rollup({
-    input: './src/index.js',
+    input: './src/js/index.js',
     plugins: [
       commonjs(),
       resolve(),
